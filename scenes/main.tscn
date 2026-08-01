@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cpbugbvv3oqi3"]
 
+[ext_resource type="Theme" uid="uid://q5a1jyyg2nge" path="res://resourcen/menu_theme.tres" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://cy77triyhy0yf" path="res://scripts/main_menu.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://dfdh7lr76fc8h" path="res://scripts/button_hover.gd" id="3_sugp2"]
 
 [node name="main_menu" type="Control" unique_id=420415433]
 layout_mode = 3
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_0wfyh")
 script = ExtResource("1_o5qli")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=367666576]
@@ -18,28 +21,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -50.5
-offset_right = 35.0
-offset_bottom = 50.5
+offset_left = -42.5
+offset_top = -53.5
+offset_right = 42.5
+offset_bottom = 53.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=477047292]
 layout_mode = 2
+alignment = 1
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer" unique_id=953468939]
 layout_mode = 2
 text = "Play"
+script = ExtResource("3_sugp2")
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1669157324]
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1669157324]
 layout_mode = 2
-text = "Options"
+text = "Settings"
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=917179459]
 layout_mode = 2
 text = "Exit"
 
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Play" to="MarginContainer/VBoxContainer/Play" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/Play" to="MarginContainer/VBoxContainer/Play" method="_on_mouse_exited"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3spnkgvi5fwm"
-path="res://.godot/imported/frog_walk.png-bbd84cb982d855fad21bb88a372437bb.ctex"
+uid="uid://oeyyk7afmd5g"
+path="res://.godot/imported/book_idle.png-2a4aae89e75e04dd928900969883dd81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/creatures/frog/frog_walk.png"
-dest_files=["res://.godot/imported/frog_walk.png-bbd84cb982d855fad21bb88a372437bb.ctex"]
+source_file="res://sprites/creatures/book/book_idle.png"
+dest_files=["res://.godot/imported/book_idle.png-2a4aae89e75e04dd928900969883dd81.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cukrk0h7ym875"
-path="res://.godot/imported/ant_walk-sheet.png-05cebf7d8986faee23dc25a9205f3cde.ctex"
+path="res://.godot/imported/ant_walk.png-e89e1dc7cf9abb1ee63f54847d46de71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/creatures/ant/ant_walk-sheet.png"
-dest_files=["res://.godot/imported/ant_walk-sheet.png-05cebf7d8986faee23dc25a9205f3cde.ctex"]
+source_file="res://sprites/creatures/ant/ant_walk.png"
+dest_files=["res://.godot/imported/ant_walk.png-e89e1dc7cf9abb1ee63f54847d46de71.ctex"]
 
 [params]
 

@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://dbudhodwv1n6g"]
+
+[ext_resource type="Texture2D" uid="uid://rik3uqy32vn0" path="res://sprites/effects/spells/missile/missile_explode.png" id="1_4gpxj"]
+[ext_resource type="Texture2D" uid="uid://bs1is3ssog8fs" path="res://sprites/effects/spells/missile/missile.png" id="2_h261h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnd00"]
+atlas = ExtResource("1_4gpxj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqbds"]
+atlas = ExtResource("1_4gpxj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bphl5"]
+atlas = ExtResource("1_4gpxj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui0gg"]
+atlas = ExtResource("1_4gpxj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsi4t"]
+atlas = ExtResource("2_h261h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8al53"]
+atlas = ExtResource("2_h261h")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f14g"]
+atlas = ExtResource("2_h261h")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwer0"]
+atlas = ExtResource("2_h261h")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6r5p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnd00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqbds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bphl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui0gg")
+}],
+"loop": 1,
+"name": &"explosion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsi4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8al53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f14g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwer0")
+}],
+"loop": 1,
+"name": &"missile",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c6r5p"]
+radius = 13.793105
+height = 27.58621
+
+[node name="spell_missile" type="Node2D" unique_id=1961192829]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1431090335]
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_c6r5p")
+animation = &"missile"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=451422432]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=630217623]
+scale = Vector2(0.58, 0.58)
+shape = SubResource("CapsuleShape2D_c6r5p")

@@ -1,3 +1,26 @@
 [gd_scene format=3 uid="uid://ccn2hkgrb6m88"]
 
+[ext_resource type="PackedScene" uid="uid://sh4c7kgajoek" path="res://scenes/prefabs/RawCreature.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://cqwu0mp2wfd55" path="res://scripts/spawn/spawn.gd" id="2_yqjtg"]
+
 [node name="Game" type="Node2D" unique_id=234587604]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1547106151]
+
+[node name="creatures" type="Node2D" parent="." unique_id=35115853]
+
+[node name="book" type="Node2D" parent="creatures" unique_id=1463048169]
+
+[node name="RawCreature" parent="creatures/book" unique_id=2087327088 instance=ExtResource("1_uwrxv")]
+position = Vector2(500, 0)
+creature = "book"
+
+[node name="enemy" type="Node2D" parent="creatures" unique_id=1233172049]
+
+[node name="environment" type="Node2D" parent="." unique_id=1079108154]
+position = Vector2(16, 25)
+
+[node name="spawn" type="Node2D" parent="." unique_id=1234130259 node_paths=PackedStringArray("enemyParent")]
+position = Vector2(-600, 0)
+script = ExtResource("2_yqjtg")
+enemyParent = NodePath("../creatures/enemy")

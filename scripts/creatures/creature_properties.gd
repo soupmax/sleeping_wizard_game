@@ -3,6 +3,7 @@ extends Node2D
 
 @export var frame_count: int = 4
 @export var frame_size: int = 32
+@export var moveable: bool = true
 
 var health: int = 10
 var speed: int = 0
@@ -21,12 +22,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if(health <= 0):
 		die()
-	if(name != "book"):
+	if(moveable):
 		move_creature(delta)
 		pass
 	
 func initialize(_type: String) -> void:
-	print_debug("type: " + _type)
+	##print_debug("type: " + _type)
 	name = _type
 	var sheet: Texture2D
 
@@ -59,10 +60,9 @@ func initialize(_type: String) -> void:
 
 	animator.sprite_frames = frames
 	animator.play("walk")
-	animator.play(_type + "_walk")
 	for i in range(frame_count):
 		var region = Rect2(i * frame_size, 0, frame_size, frame_size)
-		print(region)
+		##print(region)
 	pass
 	
 func move_creature(delta: float) -> void:

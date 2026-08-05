@@ -3,6 +3,7 @@ extends Node2D
 @export var enemyParent: Node2D
 @export var spawnTimer: int = 4
 
+
 var spawnPos: Array[int] = []
 var tmr: float = 1
 

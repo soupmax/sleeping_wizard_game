@@ -43,8 +43,10 @@ animations = [{
 
 [node name="RawCreature" type="Node2D" unique_id=2087327088]
 script = ExtResource("1_ipeei")
+moveable = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=157941408]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_c6r5p")
 animation = &"missing_texture"
 frame_progress = 0.9214179
